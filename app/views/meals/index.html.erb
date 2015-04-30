@@ -1,0 +1,9 @@
+<h1>The Meal World :: Your Meals</h1>
+
+<% @meals.each do |meal| %>
+  <h3><%= meal.name %></h3>
+  <p>Rating: <%= meal.rating %></p>
+  <p><%= link_to "Meal details", meal_path(meal.record_id) %>
+<% end %>
+
+
