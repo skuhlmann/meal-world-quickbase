@@ -21,6 +21,14 @@ class Meal
     build_meal(service.find_by_record_id(id))
   end
 
+  def self.create(data)
+    service.create_record(data)
+  end
+
+  def self.delete(id)
+    service.delete_record(id)
+  end
+
   private
 
   def self.build_meal(data)

@@ -16,6 +16,23 @@ describe "Meal flow", type: :feature do
     expect(current_path).to eq('/meals/2')
     expect(page).to have_text("Cheeseburgers")
   end
+
+  it "can add a meal and delete it" do
+    visit '/'
+    click_link("What did you eat today?")
+    fill_in("meal_name", with: "Hot Dogs")
+    fill_in("meal_description", with: "All Pork. Lot's of mustard")
+    fill_in("meal_category", with: "Street Food")
+    fill_in("meal_rating", with: "5")
+    click_button("Add meal")
+
+    expect(page).to have_text("You added a meal")
+    expect(page).to have_text("Hot Dog")
+
+    click_button("Delete Hot Dog")
+    expect(current_path).to eq(meals_path)
+    expect(page).to have_text("You deleted a meal")
+  end
 end
 
 

@@ -1,5 +1,7 @@
 <h1>The Meal World :: Your Meals</h1>
 
+<p><%= link_to "What did you eat today?", new_meal_path %></p>
+
 <% @meals.each do |meal| %>
   <h3><%= meal.name %></h3>
   <p>Rating: <%= meal.rating %></p>

@@ -6,7 +6,7 @@ RSpec.describe Meal, :type => :model do
     "description"=>"With read sauce and meatballs",
     "rating"=>"3.0",
     "category"=>"Italian",
-    "record_id"=>"1"
+    "record_id_"=>"1"
   } }
 
   it "creates a valid meal" do

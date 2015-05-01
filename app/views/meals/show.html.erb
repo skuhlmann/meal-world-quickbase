@@ -4,3 +4,5 @@
 <p><%= @meal.description %></p>
 <p>Rating: <%= @meal.rating %></p>
 
+<p><%= button_to "Delete #{@meal.name}", meal_path(@meal.record_id), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
