@@ -19,7 +19,8 @@ class QuickbaseService
 
   def create_record(data)
     params = build_record_params(data)
-    HTTParty.get("#{base_url}#{dbid}?a=API_AddRecord#{params}&ticket=#{auth_ticket}&apptoken=#{ENV["APP_TOKEN"]}")
+    url = URI.encode("#{base_url}#{dbid}?a=API_AddRecord#{params}&ticket=#{auth_ticket}&apptoken=#{ENV["APP_TOKEN"]}")
+    HTTParty.get(url)
   end
 
   def update_record(id, data)
