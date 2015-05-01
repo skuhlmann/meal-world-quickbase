@@ -1,11 +1,17 @@
-<h1>The Meal World :: Your Meals</h1>
+<div class="header">
+  <h1>The Meal World :: Your Meals
+  <span class="cta push-right"><%= link_to "What did you eat today?", new_meal_path %></span>
+</h1>
+</div>
 
-<p><%= link_to "What did you eat today?", new_meal_path %></p>
-
+<div class="column-group horizontal-gutters">
 <% @meals.each do |meal| %>
-  <h3><%= meal.name %></h3>
-  <p>Rating: <%= meal.rating %></p>
-  <p><%= link_to "Meal details", meal_path(meal.record_id) %>
+    <div id="meal-box" class="all-33">
+      <h3><%= meal.name %></h3>
+      <p>Rating: <%= meal.rating %></p>
+      <p><%= link_to "Meal details", meal_path(meal.record_id) %>
+    </div>
 <% end %>
+</div>
 
 

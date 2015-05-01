@@ -1,0 +1,40 @@
+#container {
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#meal-box {
+  border-style: solid;
+  border-width: 1px;
+  border-color: grey;
+  padding: 10px;
+  margin: 10px;
+}
+
+.ink-form .control-group {
+  width: 60%;
+}
+
+.headline {
+  border-bottom: solid 1px;
+  margin-bottom: 20px;
+}
+
+.cta {
+  font-size: 20px;
+}
+
+a {
+  color: #4a9b17;
+}
+
+a:hover {
+  color: #3e8313;
+  text-decoration: none;
+}
+
+.medium {
+  line-height: 10px;
+  margin-bottom: 5px;
+}

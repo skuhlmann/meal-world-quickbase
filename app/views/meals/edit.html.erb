@@ -1,27 +1,35 @@
-<h1>The Meal World :: Editing <%= @meal.name %> </h1>
-<%= form_tag("/meals/#{@meal.record_id}", method: :put) do %>
-  <p>
-  <%= label_tag(:name, "Meal name:") %>
-  <%= text_field(:meal, :name) %>
-  </p>
+<div class="header">
+  <h1>The Meal World :: Editing <%= @meal.name %>
+  <span class="cta push-right"><%= link_to "Back to this meal", meal_path(@meal.record_id) %></span>
+  </h1>
+</div>
 
-  <p>
-  <%= label_tag(:description, "Describe it:") %>
-  <%= text_area(:meal, :description) %>
-  </p>
+<%= form_tag("/meals/#{@meal.record_id}", method: :put, class: "ink-form") do %>
+  <div class="control-group">
+      <%= label_tag(:name, "Meal name") %>
+    <div class="control">
+      <%= text_field(:meal, :name) %>
+    </div>
 
-  <p>
-  <%= label_tag(:category, "Category:") %>
-  <%= text_field(:meal, :category) %>
-  </p>
+    <%= label_tag(:description, "Describe it") %>
+    <div class="control">
+      <%= text_area(:meal, :description) %>
+    </div>
 
-  <p>
-  <%= label_tag(:rating, "Rating:") %>
-  <%= number_field(:meal, :rating, in: 1...6) %>
-  </p>
+    <%= label_tag(:category, "Category") %>
+    <div class="control">
+      <%= text_field(:meal, :category) %>
+    </div>
 
-  <p>
-  <%= submit_tag("Update meal") %>
-  </p>
+    <%= label_tag(:rating, "Rating") %>
+    <div class="control">
+      <%= number_field(:meal, :rating, in: 1...6) %>
+    </div>
 
+    <hr>
+
+    <div class="control">
+      <%= submit_tag("Update meal", class: "ink-button green") %>
+    </div>
+  </div>
 <% end %>

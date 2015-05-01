@@ -1,5 +1,14 @@
-<% if flash %>
-  <% flash.each do |key, message| %>
-    <%= message %>
-  <% end %>
+<% if flash[:notice] %>
+  <div class="column-group">
+    <div class="all-20"></div>
+    <div class="all-60">
+      <div class="ink-alert basic success" role="alert">
+        <button class="ink-dismiss">&times;</button>
+          <% flash.each do |key, message| %>
+            <%= message %>
+          <% end %>
+      </div>
+    </div>
+    <div class="all-20"></div>
+  </div>
 <% end %>
