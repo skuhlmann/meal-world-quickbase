@@ -25,6 +25,10 @@ class Meal
     service.create_record(data)
   end
 
+  def self.update(id, data)
+    service.update_record(id, data)
+  end
+
   def self.delete(id)
     service.delete_record(id)
   end

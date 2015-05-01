@@ -21,6 +21,11 @@ class QuickbaseService
     HTTParty.get("#{base_url}bju4mdsdk?a=API_AddRecord#{params}&ticket=#{auth_ticket}&apptoken=#{ENV["APP_TOKEN"]}")
   end
 
+  def update_record(id, data)
+    params = build_record_params(data)
+    HTTParty.get("#{base_url}bju4mdsdk?a=API_EditRecord&rid=#{id}#{params}&ticket=#{auth_ticket}&apptoken=#{ENV["APP_TOKEN"]}")
+  end
+
   def delete_record(id)
     HTTParty.get("#{base_url}bju4mdsdk?a=API_DeleteRecord&rid=#{id}&ticket=#{auth_ticket}&apptoken=#{ENV["APP_TOKEN"]}")
   end

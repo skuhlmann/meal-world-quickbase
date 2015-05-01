@@ -17,6 +17,16 @@ class MealsController < ApplicationController
     redirect_to meal_path(meal_id)
   end
 
+  def edit
+    @meal = Meal.find(params["id"])
+  end
+
+  def update
+    Meal.update(params["id"], meal_params)
+    flash[:notice] = "You updated this meal"
+    redirect_to meal_path(params["id"])
+  end
+
   def destroy
     meal_id = params["id"]
     Meal.delete(meal_id)

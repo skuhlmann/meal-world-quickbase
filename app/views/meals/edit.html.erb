@@ -1,0 +1,27 @@
+<h1>The Meal World :: Editing <%= @meal.name %> </h1>
+<%= form_tag("/meals/#{@meal.record_id}", method: :put) do %>
+  <p>
+  <%= label_tag(:name, "Meal name:") %>
+  <%= text_field(:meal, :name) %>
+  </p>
+
+  <p>
+  <%= label_tag(:description, "Describe it:") %>
+  <%= text_area(:meal, :description) %>
+  </p>
+
+  <p>
+  <%= label_tag(:category, "Category:") %>
+  <%= text_field(:meal, :category) %>
+  </p>
+
+  <p>
+  <%= label_tag(:rating, "Rating:") %>
+  <%= number_field(:meal, :rating, in: 1...6) %>
+  </p>
+
+  <p>
+  <%= submit_tag("Update meal") %>
+  </p>
+
+<% end %>

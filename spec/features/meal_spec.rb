@@ -32,6 +32,25 @@ describe "Meal flow", type: :feature do
     click_button("Delete Hot Dog")
     expect(current_path).to eq(meals_path)
     expect(page).to have_text("You deleted a meal")
+    expect(page).not_to have_text("Hot Dog")
+  end
+
+  it "can edit a meal" do
+    visit '/'
+    click_link("What did you eat today?")
+    fill_in("meal_name", with: "Hot Dogs")
+    fill_in("meal_description", with: "All Pork. Lot's of mustard")
+    fill_in("meal_category", with: "Street Food")
+    fill_in("meal_rating", with: "5")
+    click_button("Add meal")
+    click_link("Edit meal")
+    fill_in("meal_name", with: "Corn Dogs")
+    click_button("Update meal")
+
+    expect(page).to have_text("Corn Dogs")
+    expect(page).to have_text("You updated this meal")
+
+    click_button("Delete Corn Dogs")
   end
 end
 
