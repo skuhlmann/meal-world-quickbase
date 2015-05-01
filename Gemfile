@@ -11,6 +11,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'unicorn'
 gem 'httparty'
+gem 'ink3-rails'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'dotenv-rails'
